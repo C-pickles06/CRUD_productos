@@ -1,0 +1,13 @@
+# Reescritura para Apache. Opcional: con el servidor embebido de PHP
+# (php -S localhost:8000 -t public) no se utiliza.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Permitir acceso a archivos estáticos existentes
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Todo lo demás va a index.php
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
