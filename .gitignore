@@ -1,0 +1,43 @@
+# Configuración local con credenciales reales
+config/config.php
+
+# Prompt original del proyecto (no se versiona)
+prompt_php_mvc.md
+
+# Logs
+*.log
+logs/
+
+# Dependencias (por si en el futuro se agrega Composer)
+/vendor/
+composer.lock
+
+# Variables de entorno
+.env
+.env.*
+!.env.example
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Editores e IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.history/
+.phpintel/
+
+# Cachés de PHP
+*.cache
+*.phar
+
+# Archivos temporales
+/tmp/
+*.tmp
+*.bak
+
+# Sesiones locales de PHP
+/sess_*
