@@ -6,6 +6,14 @@ class User extends Model
 {
     protected static string $table = 'users';
 
+    public static function all(): array
+    {
+        $stmt = self::db()->query(
+            'SELECT id, username, name FROM users ORDER BY name ASC'
+        );
+        return $stmt->fetchAll();
+    }
+
     public static function findByUsername(string $username): ?array
     {
         $stmt = self::db()->prepare(

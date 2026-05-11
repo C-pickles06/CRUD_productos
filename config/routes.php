@@ -3,6 +3,7 @@
 use App\Controllers\AuthController;
 use App\Controllers\HomeController;
 use App\Controllers\ProductController;
+use App\Controllers\UserController;
 use Core\AuthMiddleware;
 use Core\Router;
 
@@ -27,4 +28,7 @@ return static function (Router $router): void {
     $router->get('/products/{id}/edit', [ProductController::class, 'edit'], $auth);
     $router->post('/products/{id}/update', [ProductController::class, 'update'], $auth);
     $router->post('/products/{id}/delete', [ProductController::class, 'destroy'], $auth);
+
+    // Usuarios
+    $router->get('/users', [UserController::class, 'index'], $auth);
 };

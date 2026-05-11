@@ -21,6 +21,7 @@ $userName = Session::get('user_name');
             <nav class="nav">
                 <?php if ($isAuthenticated): ?>
                     <a href="/products">Productos</a>
+                    <a href="/users">Usuarios</a>
                     <span class="user">👤 <?= View::e($userName) ?></span>
                     <form action="/logout" method="post" class="inline-form">
                         <?= Csrf::field() ?>
